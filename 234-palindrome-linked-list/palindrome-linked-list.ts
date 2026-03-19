@@ -39,6 +39,8 @@ function print(head: Node):void {
 }
 
 function isPalindrome(head: Node): boolean {
+    if(!head) return true;
+    
     // Find Midnode
     let slo : Node = head;
     let fst : Node = head;
