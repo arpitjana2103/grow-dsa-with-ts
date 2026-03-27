@@ -15,15 +15,20 @@ class MyQueue {
         this.s1.push(x);
     }
 
-    /**
-     * @return {number}
-     */
-    pop() {
+    rearrange() {
         if (this.s2.length === 0) {
             while (this.s1.length > 0) {
                 this.s2.push(this.s1.pop());
             }
         }
+    }
+
+    /**
+     * @return {number}
+     */
+
+    pop() {
+        this.rearrange();
         return this.s2.pop();
     }
 
@@ -31,11 +36,7 @@ class MyQueue {
      * @return {number}
      */
     peek() {
-        if (this.s2.length === 0) {
-            while (this.s1.length > 0) {
-                this.s2.push(this.s1.pop());
-            }
-        }
+        this.rearrange();
         return this.s2[this.s2.length - 1];
     }
 
