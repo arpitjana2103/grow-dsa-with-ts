@@ -1,15 +1,15 @@
 function minAddToMakeValid(s: string): number {
     
-    let open = 0;
-    let close = 0;
+    let openReq = 0;
+    let closeReq = 0;
 
     for(const char of s){
-        if(char === '(') open++;
-        if(char === ')'){
-            if(open) open--;
-            else close++;
+        if(char === '(') closeReq++;
+        if(char === ')') {
+            if(closeReq) closeReq--;
+            else openReq++;
         }
     }
 
-    return open + close;
+    return openReq + closeReq;
 };
