@@ -6,7 +6,7 @@ function minAddToMakeValid(s: string): number {
     for(const char of s){
         if(char === '(') closeReq++;
         if(char === ')') {
-            if(closeReq) closeReq--;
+            if(closeReq > 0) closeReq--;
             else openReq++;
         }
     }
