@@ -35,6 +35,5 @@ function reverseWords(s: string): string {
        str[slow++] = ' ';
     }
     
-    console.log(slow);
     return str.slice(0, slow-1).join('');
 };
